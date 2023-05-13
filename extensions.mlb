@@ -25,12 +25,12 @@ local
       $(SML_LIB)/basis/basis.mlb
 
       (* Workarounds (if any). *)
-      detail/ml/$(SML_COMPILER)/workarounds.mlb
+      detail/ml/mlton/workarounds.mlb
    in
       detail/ml/common/basis.sml
-      detail/ml/$(SML_COMPILER)/basis.sml
+      detail/ml/mlton/basis.sml
    end
-   detail/ml/$(SML_COMPILER)/pervasive.mlb
+   detail/ml/mlton/pervasive.mlb
 in
    ann
       "forceUsed"
@@ -44,7 +44,7 @@ in
          end
 
          (* Compiler specific extensions (if any). *)
-         detail/ml/$(SML_COMPILER)/extensions.mlb
+         detail/ml/mlton/extensions.mlb
 
          (* Typing *)
          public/typing/phantom.sig
@@ -135,7 +135,7 @@ in
                detail/data/univ-exn.sml
             end
          in
-            detail/ml/$(SML_COMPILER)/univ.sml
+            detail/ml/mlton/univ.sml
          end
 
          (* BinOp *)
@@ -247,9 +247,9 @@ in
          detail/numeric/mk-real-ext.fun
          detail/numeric/mk-word-ext.fun
          detail/ml/common/scalars.sml
-         detail/ml/$(SML_COMPILER)/ints.sml
-         detail/ml/$(SML_COMPILER)/reals.sml
-         detail/ml/$(SML_COMPILER)/words.sml
+         detail/ml/mlton/ints.sml
+         detail/ml/mlton/reals.sml
+         detail/ml/mlton/words.sml
 
          (* List *)
          public/sequence/list.sig
@@ -296,11 +296,11 @@ in
          detail/sequence/mk-mono-array-slice-ext.fun
          detail/text/mk-text-ext.fun
          detail/ml/common/mono-seqs.sml
-         detail/ml/$(SML_COMPILER)/mono-vectors.sml
-         detail/ml/$(SML_COMPILER)/mono-vector-slices.sml
-         detail/ml/$(SML_COMPILER)/mono-arrays.sml
-         detail/ml/$(SML_COMPILER)/mono-array-slices.sml
-         detail/ml/$(SML_COMPILER)/texts.sml
+         detail/ml/mlton/mono-vectors.sml
+         detail/ml/mlton/mono-vector-slices.sml
+         detail/ml/mlton/mono-arrays.sml
+         detail/ml/mlton/mono-array-slices.sml
+         detail/ml/mlton/texts.sml
 
          (* Stream *)
          public/sequence/stream.sig
@@ -337,7 +337,7 @@ in
          public/text/cvt.sig
          detail/text/cvt.sml
       in
-         public/export/$(SML_COMPILER).sml
+         public/export/mlton.sml
          public/export/common.sml
          public/export/top-level.sml
          public/export/open-top-level.sml

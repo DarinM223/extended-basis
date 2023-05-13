@@ -5,7 +5,7 @@
  *)
 
 local
-   $(MLTON_ROOT)/basis/mlton.mlb
+   $(SML_LIB)/basis/mlton.mlb
 in
    ext.sml
 end
