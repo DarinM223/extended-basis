@@ -1,0 +1,17 @@
+(* Copyright (C) 2006 SSH Communications Security, Helsinki, Finland
+ *
+ * This code is released under the MLton license, a BSD-style license.
+ * See the LICENSE file or http://mlton.org/License for details.
+ *)
+
+library
+   source(-)
+is
+   $/basis.cm
+   char.sig
+   funs.cm
+   real.sig
+   reals.sml
+   string.sig
+   text.sig
+   text.sml

@@ -1,0 +1,15 @@
+(* Copyright (C) 2006 SSH Communications Security, Helsinki, Finland
+ *
+ * This code is released under the MLton license, a BSD-style license.
+ * See the LICENSE file or http://mlton.org/License for details.
+ *)
+
+lib ["workarounds/mk-real-sane.fun",
+     "workarounds/char.sig",
+     "workarounds/real.sig",
+     "workarounds/reals.sml",
+     "workarounds/string.sig",
+     "workarounds/text.sig",
+     "workarounds/text.sml"] ;
+
+(* XXX Is there a way to "forget" top-level bindings in SML/NJ? *)
