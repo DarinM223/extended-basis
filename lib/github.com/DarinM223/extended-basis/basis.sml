@@ -8,4 +8,4 @@
  * directory of this library (the directory of this file).
  *)
 
-lib ["extensions.use"] ;
+use "extensions.sml" ;
