@@ -1,0 +1,20 @@
+(* Copyright (C) 2006 SSH Communications Security, Helsinki, Finland
+ *
+ * This code is released under the MLton license, a BSD-style license.
+ * See the LICENSE file or http://mlton.org/License for details.
+ *)
+
+local
+   $(SML_LIB)/basis/basis.mlb
+in
+   workarounds/ieee-real.mlkit.sig
+   workarounds/ieee-real.mlkit.sml
+
+   workarounds/mk-real-sane.mlkit.fun
+   workarounds/real.mlkit.sig
+   workarounds/reals.mlkit.sml
+
+   workarounds/string.mlkit.sig
+   workarounds/text.mlkit.sig
+   workarounds/text.mlkit.sml
+end

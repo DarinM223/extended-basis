@@ -4,14 +4,9 @@
  * See the LICENSE file or http://mlton.org/License for details.
  *)
 
-library
+group
+   library(basis-rebound.cm)
    source(-)
 is
-   $/basis.cm
-   char.sig
-   funs.cm
-   real.sig
-   reals.sml
-   string.sig
-   text.sig
-   text.sml
+   ../../detail/bootstrap.sml
+   basis-rebound.cm

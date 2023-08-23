@@ -4,9 +4,8 @@
  * See the LICENSE file or http://mlton.org/License for details.
  *)
 
-group
-   library(basis-rebound.cm)
-   source(-)
-is
-   ../../../detail/bootstrap.sml
-   basis-rebound.cm
+local
+   $(SML_LIB)/basis/basis.mlb
+in
+   ext.common.sml
+end

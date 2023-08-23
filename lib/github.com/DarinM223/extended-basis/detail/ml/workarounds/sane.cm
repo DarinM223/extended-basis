@@ -4,8 +4,14 @@
  * See the LICENSE file or http://mlton.org/License for details.
  *)
 
-local
-   $(SML_LIB)/basis/basis.mlb
-in
-   ../common/ext.sml
-end
+library
+   source(-)
+is
+   $/basis.cm
+   char.smlnj.sig
+   funs.cm
+   real.smlnj.sig
+   reals.smlnj.sml
+   string.smlnj.sig
+   text.smlnj.sig
+   text.smlnj.sml

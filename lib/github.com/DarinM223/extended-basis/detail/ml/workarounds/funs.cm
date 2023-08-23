@@ -5,5 +5,5 @@
  *)
 
 group is
-   mk-real-sane.fun
+   mk-real-sane.smlnj.fun
    $/basis.cm

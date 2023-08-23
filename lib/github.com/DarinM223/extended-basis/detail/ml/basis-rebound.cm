@@ -1,10 +1,12 @@
-(* Copyright (C) 2006 SSH Communications Security, Helsinki, Finland
+(* Copyright (C) 2007 SSH Communications Security, Helsinki, Finland
  *
  * This code is released under the MLton license, a BSD-style license.
  * See the LICENSE file or http://mlton.org/License for details.
  *)
 
 library
-   library(workarounds/basis.cm) - library(../../../extensions.cm)
+   source(-)
 is
+   ../../detail/ml/basis.common.sml
+   ../../detail/ml/basis.smlnj.sml
    workarounds/basis.cm

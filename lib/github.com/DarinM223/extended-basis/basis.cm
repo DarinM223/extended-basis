@@ -5,8 +5,8 @@
  *)
 
 library
-   library(detail/ml/smlnj/basis-minus-extensions.cm)
+   library(detail/ml/basis-minus-extensions.cm)
    library(extensions.cm)
 is
    extensions.cm
-   detail/ml/smlnj/basis-minus-extensions.cm
+   detail/ml/basis-minus-extensions.cm
