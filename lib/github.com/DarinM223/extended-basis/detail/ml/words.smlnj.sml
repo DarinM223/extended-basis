@@ -8,7 +8,6 @@
 
 structure SysWord = MkWordExt (BasisSysWord)
 
-structure Word31 = MkWordExt (BasisWord31)
 structure Word32 = MkWordExt (BasisWord32)
 
 structure Word64 = MkWordExt (BasisWord64)

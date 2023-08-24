@@ -6,6 +6,6 @@
 
 functor MkRealSane (R : REAL) = struct
    open R
-   val fromDecimal' = fromDecimal
+   val fromDecimal' = Option.valOf o fromDecimal
    fun fromDecimal d = SOME (fromDecimal' d) handle _ => NONE
 end

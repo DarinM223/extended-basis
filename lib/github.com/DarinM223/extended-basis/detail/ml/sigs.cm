@@ -35,7 +35,7 @@ is
    ../../public/control/with.sig
    ../../public/data/bool.sig
    ../../public/data/id.sig
-   ../../public/data/option.sig
+   ../../public/data/option.smlnj.sig
    ../../public/data/order.sig
    ../../public/data/pair.sig
    ../../public/data/product-type.sig
@@ -74,17 +74,17 @@ is
    ../../public/os/os-file-sys.sig
    ../../public/os/os.sig
    ../../public/sequence/array-slice.sig
-   ../../public/sequence/array.sig
+   ../../public/sequence/array.smlnj.sig
    ../../public/sequence/buffer.sig
-   ../../public/sequence/list.sig
+   ../../public/sequence/list.smlnj.sig
    ../../public/sequence/mono-array-slice.sig
-   ../../public/sequence/mono-array.sig
+   ../../public/sequence/mono-array.smlnj.sig
    ../../public/sequence/mono-vector-slice.sig
-   ../../public/sequence/mono-vector.sig
+   ../../public/sequence/mono-vector.smlnj.sig
    ../../public/sequence/resizable-array.sig
    ../../public/sequence/stream.sig
    ../../public/sequence/vector-slice.sig
-   ../../public/sequence/vector.sig
+   ../../public/sequence/vector.smlnj.sig
    ../../public/text/char.sig
    ../../public/text/cvt.sig
    ../../public/text/string.sig

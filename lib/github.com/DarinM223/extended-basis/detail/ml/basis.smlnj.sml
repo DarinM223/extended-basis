@@ -7,7 +7,6 @@
 structure SMLofNJ = SMLofNJ
 
 structure BasisFixedInt = FixedInt
-structure BasisInt31 = Int31
 structure BasisInt32 = Int32
 structure BasisInt64 = Int64
 structure BasisIntInf = IntInf
@@ -21,6 +20,5 @@ structure BasisRealArraySlice = RealArraySlice
 structure BasisRealVector = RealVector
 structure BasisRealVectorSlice = RealVectorSlice
 structure BasisSysWord = SysWord
-structure BasisWord31 = Word31
 structure BasisWord32 = Word32
 structure BasisWord64 = Word64
