@@ -1,1 +1,7 @@
 .cm/
+*.d
+*.o
+*.lnk
+*.eb
+*.eb1
+run

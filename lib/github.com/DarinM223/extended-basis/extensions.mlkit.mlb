@@ -1,0 +1,347 @@
+(* Copyright (C) 2006-2007 SSH Communications Security, Helsinki, Finland
+ *
+ * This code is released under the MLton license, a BSD-style license.
+ * See the LICENSE file or http://mlton.org/License for details.
+ *)
+
+(*
+ * This basis file defines only the extensions provided by this library.
+ * Users may refer to this basis file, but this is probably more
+ * interesting to maintainers.  You can, for example, run the command
+ *
+ *    mlton -stop tc                            \
+ *          -mlb-path-map ~/.mlton/mlb-path-map \
+ *          -show-basis extensions.basis        \
+ *          extensions.mlb
+ *
+ * and inspect the generated file (extensions.basis) to get a precise and
+ * accurate picture of the extensions provided by this library.  The
+ * mlb-path-map must also contain the variable SML_COMPILER specifying the
+ * SML compiler mnemonic (mlton).
+ *)
+
+local
+   local
+      $(SML_LIB)/basis/basis.mlb
+
+      (* Workarounds (if any). *)
+      detail/ml/workarounds.mlkit.mlb
+   in
+      detail/ml/basis.common.sml
+      detail/ml/basis.mlkit.sml
+   end
+   detail/ml/pervasive.mlkit.mlb
+in
+   ann
+      "forceUsed"
+      "sequenceNonUnit warn"
+      "warnUnused true"
+   in
+      local
+         (* Minimal modules for bootstrapping. *)
+         ann "warnUnused false" in
+            detail/bootstrap.sml
+         end
+
+         (* Compiler specific extensions (if any). *)
+         detail/ml/extensions.mlkit.mlb
+
+         (* Typing *)
+         public/typing/phantom.sig
+         detail/typing/phantom.sml
+         public/typing/static-sum.sig
+         detail/typing/static-sum.sml
+
+         (* Concept signatures *)
+         public/concept/bitwise.sig
+         public/concept/bounded.sig
+         public/concept/cased.sig
+         public/concept/cstringable.sig
+         public/concept/empty.sig
+         public/concept/equality.sig
+         public/concept/etaexp.sig
+         public/concept/flags.sig
+         public/concept/func.sig
+         public/concept/intable.sig
+         public/concept/largeable.sig
+         public/concept/monad.sig
+         public/concept/ordered.sig
+         public/concept/scannable.sig
+         public/concept/shiftable.sig
+         public/concept/signed.sig
+         public/concept/stringable.sig
+         public/concept/t.sig
+         public/concept/wordable.sig
+
+         public/concept/formattable.sig
+
+         (* MkBounded *)
+         detail/concept/mk-bounded.fun
+
+         (* MkEquality *)
+         detail/concept/mk-equality.fun
+
+         (* MkScannable *)
+         detail/concept/mk-scannable.fun
+
+         (* MkStringable *)
+         detail/concept/mk-stringable.fun
+
+         (* MkCStringable *)
+         detail/concept/mk-cstringable.fun
+
+         (* Void *)
+         public/typing/void.sig
+
+         (* Fn *)
+         public/fn/fn.sig
+         detail/fn/fn.sml
+
+         (* CPS *)
+         public/fn/cps.sig
+         detail/fn/cps.sml
+
+         (* Basic *)
+         public/basic.sig
+         detail/basic.sml
+
+         (* Id *)
+         public/data/id.sig
+
+         (* Unit *)
+         public/data/unit.sig
+
+         (* Sq *)
+         public/data/sq.sig
+         detail/data/sq.sml
+
+         (* BinFn *)
+         public/fn/bin-fn.sig
+         detail/fn/bin-fn.sml
+
+         (* UnOp *)
+         public/fn/un-op.sig
+         detail/fn/un-op.sml
+
+         (* Thunk *)
+         public/fn/thunk.sig
+         detail/fn/thunk.sml
+
+         (* Univ *)
+         public/data/univ.sig
+         local
+            ann "warnUnused false" in
+               detail/data/univ-ref.sml
+               detail/data/univ-exn.sml
+            end
+         in
+            detail/ml/univ.mlkit.sml
+         end
+
+         (* BinOp *)
+         public/fn/bin-op.sig
+         detail/fn/bin-op.sml
+
+         (* Effect *)
+         public/fn/effect.sig
+         detail/fn/effect.sml
+
+         (* Fix *)
+         public/generic/fix.sig
+         detail/generic/fix.sml
+
+         (* UnPr *)
+         public/fn/un-pr.sig
+         detail/fn/un-pr.sml
+
+         (* Order *)
+         public/data/order.sig
+         detail/data/order.sml
+
+         (* BinPr *)
+         public/fn/bin-pr.sig
+         detail/fn/bin-pr.sml
+
+         (* Cmp *)
+         public/fn/cmp.sig
+         detail/fn/cmp.sml
+
+         (* MkOrdered *)
+         detail/concept/mk-ordered.fun
+
+         (* Ref *)
+         public/data/ref.sig
+         detail/data/ref.sml
+
+         (* Bool *)
+         public/data/bool.sig
+         detail/data/bool.sml
+
+         (* Products *)
+         public/data/product-type.sig
+         public/data/pair.sig
+         detail/data/pair.sml
+         public/data/product.sig
+         detail/data/product.sml
+
+         (* MkMonad *)
+         detail/concept/mk-monad.fun
+
+         (* With *)
+         public/control/with.sig
+         detail/control/with.sml
+
+         (* Sum *)
+         public/data/sum.sig
+         detail/data/sum.sml
+
+         (* Exn *)
+         public/control/exn.sig
+         detail/control/exn.sml
+
+         (* Contract *)
+         public/debug/contract.sig
+         detail/debug/contract.sml
+
+         (* Emb *)
+         public/generic/emb.sig
+         detail/generic/emb.sml
+
+         (* Iso *)
+         public/generic/iso.sig
+         detail/generic/iso.sml
+
+         (* Fold *)
+         public/fold/fold.sig
+         detail/fold/fold.sml
+
+         public/fold/fru.sig
+         detail/fold/fru.sml
+
+         (* Tie *)
+         public/generic/tie.sig
+         detail/generic/tie.sml
+
+         (* Seqs *)
+         public/sequence/array.sig
+         public/sequence/array-slice.sig
+         public/sequence/vector.sig
+         public/sequence/vector-slice.sig
+         detail/sequence/mk-seq-common-ext.fun
+         detail/sequence/array.sml
+         detail/sequence/array-slice.sml
+         detail/sequence/vector.sml
+         detail/sequence/vector-slice.sml
+
+         (* Option *)
+         public/data/option.sig
+         detail/data/option.sml
+
+         (* Scalars *)
+         public/numeric/integer.sig
+         public/numeric/int-inf.sig
+         public/numeric/real.sig
+         public/numeric/word.sig
+         detail/numeric/mk-integer-ext.fun
+         detail/numeric/mk-int-inf-ext.fun
+         detail/numeric/mk-real-ext.fun
+         detail/numeric/mk-word-ext.fun
+         detail/ml/scalars.common.sml
+         detail/ml/ints.mlkit.sml
+         detail/ml/reals.mlkit.sml
+         detail/ml/words.mlkit.sml
+
+         (* List *)
+         public/sequence/list.sig
+         detail/sequence/list.sml
+
+         (* Buffer *)
+         public/sequence/buffer.sig
+         detail/sequence/mk-buffer-common.fun
+         detail/sequence/buffer.sml
+
+         (* ResizableArray *)
+         public/sequence/resizable-array.sig
+         detail/sequence/resizable-array.sml
+
+         (* Reader *)
+         public/io/reader.sig
+         detail/io/reader.sml
+
+         (* Writer *)
+         public/io/writer.sig
+         detail/io/writer.sml
+
+         (* IOS Monad *)
+         public/io/ios-monad.sig
+         detail/io/ios-monad.sml
+
+         (* Exit *)
+         public/control/exit.sig
+         detail/control/exit.sml
+
+         (* MonoSeqs *)
+         public/sequence/mono-vector.sig
+         public/sequence/mono-vector-slice.sig
+         public/sequence/mono-array.sig
+         public/sequence/mono-array-slice.sig
+         public/text/char.sig
+         public/text/string.sig
+         public/text/substring.sig
+         public/text/text.sig
+         detail/sequence/mk-mono-seq-common-ext.fun
+         detail/sequence/mk-mono-vector-ext.fun
+         detail/sequence/mk-mono-vector-slice-ext.fun
+         detail/sequence/mk-mono-array-ext.fun
+         detail/sequence/mk-mono-array-slice-ext.fun
+         detail/text/mk-text-ext.fun
+         detail/ml/mono-seqs.common.sml
+         detail/ml/mono-vectors.mlkit.sml
+         detail/ml/mono-vector-slices.mlkit.sml
+         detail/ml/mono-arrays.mlkit.sml
+         detail/ml/mono-array-slices.mlkit.sml
+         detail/ml/texts.mlkit.sml
+
+         (* Stream *)
+         public/sequence/stream.sig
+         detail/sequence/stream.sml
+
+         (* Iter *)
+         public/control/iter.sig
+         detail/control/iter.sml
+
+         (* Lazy *)
+         public/lazy/lazy.sig
+         detail/lazy/lazy.sml
+
+         (* ShiftOp *)
+         public/fn/shift-op.sig
+
+         (* TextIO *)
+         public/io/text-io.sig
+         detail/io/text-io.sml
+
+         (* OS *)
+         public/os/os-file-sys.sig
+         public/os/os.sig
+         detail/os/os.sml
+
+         (* MkWordFlags *)
+         detail/concept/mk-word-flags.fun
+
+         (* Time *)
+         public/time/time.sig
+         detail/time/time.sml
+
+         (* Cvt *)
+         public/text/cvt.sig
+         detail/text/cvt.sml
+      in
+         public/export/export.mlkit.sml
+         public/export/export.common.sml
+         public/export/top-level.sml
+         public/export/open-top-level.sml
+         public/export/infixes.sml
+      end
+   end
+end
