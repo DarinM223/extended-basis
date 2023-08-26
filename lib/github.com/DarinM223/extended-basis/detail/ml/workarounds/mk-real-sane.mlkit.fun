@@ -17,4 +17,5 @@ functor MkRealSane (R : REAL) = struct
    fun toLarge _ = raise Fail "Real?.toLarge unsupported"
    fun toLargeInt _ = raise Fail "Real?.toLargeInt unsupported"
    fun toManExp _ = raise Fail "Real?.toManExp unsupported"
+   fun nextAfter _ = raise Fail "Real?.nextAfter unsupported"
 end

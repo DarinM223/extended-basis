@@ -17,4 +17,5 @@ signature REAL = sig
    val toLarge : real -> LargeReal.real
    val toLargeInt : IEEEReal.rounding_mode -> real -> LargeInt.int
    val toManExp : real -> {man : real, exp : int}
+   val nextAfter: real * real -> real
 end
