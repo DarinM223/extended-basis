@@ -36,7 +36,7 @@ signature FLAGS = sig
    (** This is always equivalent to {(toWord, fromWord)}. *)
 
    (** == Constants == *)
-   
+
    val none: flags
    (** The empty set. *)
 

@@ -113,6 +113,6 @@ signature WORD = sig
    include STRINGABLE
    include WORDABLE_X
 
-   sharing type bitwise = bounded = formattable = intable = largeable = ordered
-              = shiftable = stringable = t = word = wordable
+   sharing type word = bitwise = bounded = formattable = intable = largeable = ordered
+              = shiftable = stringable = t = wordable
 end

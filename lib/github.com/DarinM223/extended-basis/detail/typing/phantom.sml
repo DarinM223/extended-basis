@@ -4,7 +4,7 @@
  * See the LICENSE file or http://mlton.org/License for details.
  *)
 
-structure Phantom :> PHANTOM = struct
+structure Phantom :> PHANTOM where type ('f, 't, 'r) Bool.t = unit = struct
    type yes = unit
    type no  = unit
 

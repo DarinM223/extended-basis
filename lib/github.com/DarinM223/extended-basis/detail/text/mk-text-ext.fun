@@ -5,6 +5,8 @@
  *)
 
 functor MkTextExt (structure Text : BASIS_TEXT
+                     where type Char.char = char
+                     where type String.string = string
                    val stringToBytes :
                        Text.String.string -> BasisWord8Vector.vector
                    val bytesToString :

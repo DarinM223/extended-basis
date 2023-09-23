@@ -5,7 +5,21 @@
  *)
 
 structure Array : ARRAY = struct
-   structure Common = MkSeqCommonExt (Array)
+   (* structure Common = MkSeqCommonExt (Array) *)
+   structure Common = struct
+      open Array
+      fun empty () = tabulate (0, Basic.undefined)
+      fun unfoldi fis (n, s) = let
+         fun lp (i, s, xs) =
+             if i = n then (fromList (rev xs), s)
+             else case fis (i, s) of (x, s) => lp (i+1, s, x::xs)
+      in if n < 0 orelse maxLen < n then raise Size else lp (0, s, [])
+      end
+      fun toList t = foldr op :: [] t
+      val isoList = (toList, fromList)
+      fun for xs ef = app ef xs
+      fun fori xs ef = appi ef xs
+   end
    open Common Array
    fun duplicate a = tabulate (length a, fn i => sub (a, i))
    val toVector = vector
